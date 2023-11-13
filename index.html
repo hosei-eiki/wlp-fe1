@@ -1,34 +1,16 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <title>WebAPI sample - fetch/post</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch POST Example</title>
 </head>
 <body>
-    <input name="word" type="text" id='word'>単語
-    <input name="meaning" type="text" id='mean'>意味
-    <input name="wordsID" type="text" id='id'>ID
-    <button id='click'>登録</button>
-    <div id='msg'>
-        <script>
-            const button = document.getElementById('click');
-            const data = { "word": word, "meaning": mean, "wordsID": id };
-            const param = {
-                method: "POST",
-                body: JSON.stringify(data)
-            };
-            button.addEventListener('click', () => {
-                fetch("https://4pev16rhda.execute-api.ap-southeast-2.amazonaws.com/WordLearningProject/" , param)
-                    .then(response => {
-                        return response.json();
-                    })
-                    .then(result => {
-                        msg.innerText = result['message'];
-                    })
-                    .catch((e) => {
-                        console.log(e)
-                    })
-            });
-        </script>
+    <h1>Fetch POST Example</h1>
+    <label for="textInput">Enter Text:</label>
+    <input type="text" id="textInput">
+    <button onclick="postData()">Submit</button>
+
+    <script src="script.js"></script>
 </body>
 </html>
