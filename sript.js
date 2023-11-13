@@ -3,7 +3,7 @@ function postData() {
     const textInputValue = document.getElementById('textInput1','textInput2','textInput3').value;
 
     // JSON形式に変換
-    const data = { "word": "textInput1" , "meaning": "textInput2" , "wordsID" : "textInput3"
+    const data = { 'word': 'textInput1' , 'meaning': 'textInput2' , 'wordsID' : 'textInput3'
     };
 
     // Fetch APIを使用してPOSTリクエストを送信
