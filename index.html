@@ -11,8 +11,8 @@
 　　　　　　<input type="number" id="textInput1">
         　　<input type="number" id="textInput2">
     </form>
-    <p>登録：<span class="result"></span></p>
-    <button>送信する</button>
+    <p>結果：<span class="result"></span></p>
+    <button>計算する</button>
 </body>
 </html>
 
@@ -21,7 +21,7 @@
         $('button').on('click',function () {
 
             //formの値をjsonに変換
-            var arr = { "key1": $('#number1').val(),"key2":$('#number2').val() };
+            var arr = { "key1": $('#textInput1').val(),"key2":$('#textInput2').val() };
             var submitData = JSON.stringify(arr);
 
             //ajaxで送信する
