@@ -5,11 +5,16 @@
     <title>WebAPI sample - fetch/post</title>
 </head>
 <body>
+    <form>
+        <input type="text" id="textInput1">
+        <input type="text" id="textInput2">
+        <input type="text" id="textInput3">
+    </form>
     <button id='click'>Put message to AWS lambda</button>
     <div id='msg'>
         <script>
             const button = document.getElementById('click');
-            const data = { "word": "textInput1", "meaning": "textInput2", "wordsID": "textInput3" };
+            const data = { "word": 'textInput1', "meaning": 'textInput2', "wordsID": 'textInput3' };
             const param = {
                 method: "POST",
                 body: JSON.stringify(data)
