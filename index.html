@@ -5,12 +5,11 @@
     <title>WebAPI sample - fetch/post</title>
 </head>
 <body>
-    <button id='click'>Register</button>
+    <button id='click'>Put message to AWS lambda</button>
     <div id='msg'>
         <script>
             const button = document.getElementById('click');
-            //dataの中身の書き換え
-            const data = { "word": "textInput1", "meaning": "textInput2" };
+            const data = { "userid": "u123456", "point": 70 };
             const param = {
                 method: "POST",
                 body: JSON.stringify(data)
