@@ -15,12 +15,13 @@
                 body: JSON.stringify(data)
             };
             button.addEventListener('click', () => {
-                fetch("https://4pev16rhda.execute-api.ap-southeast-2.amazonaws.com/WordLearningProject/", param)
+                fetch("https://at92482466.execute-api.ap-northeast-1.amazonaws.com/dev/parrot", param)
                     .then(response => {
                         return response.json();
                     })
                     .then(result => {
-                        msg.innerText = result['message'];
+                        msg.innerText = JSON.stringify(result); 
+
                     })
                     .catch((e) => {
                         console.log(e)
