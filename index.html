@@ -10,13 +10,13 @@
         <input type="text" id="textInput2">
         <input type="text" id="textInput3">
     </form>
-    <button id='click'>登録</button>
+    <button id='click'>Send</button>
     <div id='msg'>
         <script>
             const button = document.getElementById('click');
-            const word = document.getElememtById('textInput1');
-            const mean = document.getElememtById('textInput2');
-            const id = document.getElememtById('textInput3');
+            //const word = document.getElememtById('textInput1');
+            //const mean = document.getElememtById('textInput2');
+            //const id = document.getElememtById('textInput3');
             const data = { "word": word, "meaning": mean, "wordsID": id };
             const param = {
                 method: "POST",
