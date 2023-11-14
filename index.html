@@ -3,7 +3,6 @@
 <head>
     <meta charset="utf-8">
     <title>WordLearningProject</title>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>    
 </head>
 <body>
     <form>
@@ -25,7 +24,7 @@
             var submitData = JSON.stringify(arr);
 
             //ajaxで送信する
-            $.ajax('https://4pev16rhda.execute-api.ap-southeast-2.amazonaws.com/WordLearningProject/', {
+            $.fetch('https://4pev16rhda.execute-api.ap-southeast-2.amazonaws.com/WordLearningProject/', {
                 type: 'POST',
                 data: submitData,
                 dataType: "json",
