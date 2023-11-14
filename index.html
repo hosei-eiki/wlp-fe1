@@ -2,30 +2,39 @@
 <html lang="ja">
 <head>
     <meta charset="utf-8">
-    <title>WebAPI sample - fetch/post</title>
+    <title>WordLearningProject</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>    
 </head>
 <body>
-    <button id='click'>Put message to AWS lambda</button>
-    <div id='msg'>
-        <script>
-            const button = document.getElementById('click');
-            const data = { "userid": "u123456", "point": 70 };
-            const param = {
-                method: "POST",
-                body: JSON.stringify(data)
-            };
-            button.addEventListener('click', () => {
-                fetch("https://xxxxxxxxxx.execute-api.ap-northeast-1.amazonaws.com/dev/postLambda_putS3", param)
-                    .then(response => {
-                        return response.json();
-                    })
-                    .then(result => {
-                        msg.innerText = result['message'];
-                    })
-                    .catch((e) => {
-                        console.log(e)
-                    })
-            });
-        </script>
+    <form>
+            <p>単語と意味と単語帳IDを入力</p>
+　　　　　　<input type="number" id="textInput1">
+        　　<input type="number" id="textInput2">
+    </form>
+    <p>登録：<span class="result"></span></p>
+    <button>送信する</button>
 </body>
 </html>
+
+<script>
+    $(function () {
+        $('button').on('click',function () {
+
+            //formの値をjsonに変換
+            var arr = { "key1": $('#number1').val(),"key2":$('#number2').val() };
+            var submitData = JSON.stringify(arr);
+
+            //ajaxで送信する
+            $.ajax('https://4pev16rhda.execute-api.ap-southeast-2.amazonaws.com/WordLearningProject/', {
+                type: 'POST',
+                data: submitData,
+                dataType: "json",
+            }).then(function (data) {
+                console.log(data);
+                $(".result").text(data);
+            }).fail(function (error) {
+                console.log(error);
+            })
+        });
+    });
+</script>
